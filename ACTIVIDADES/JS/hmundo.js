@@ -1,3 +1,3 @@
-<scrip>
+<script>
 alert('Hola Mundo!');
-</scrip>
+</script>
