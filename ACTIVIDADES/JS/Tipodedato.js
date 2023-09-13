@@ -12,3 +12,11 @@ console.log(N_pequeno)
 const bigInt = 1234567654321234567654321;
 console.log(bigInt)
 
+
+
+console.log('##### STRINGS #####');
+let nombre = "Nicolas";
+let ciudad = "Ciudad";
+
+console.log(nombre);
+
