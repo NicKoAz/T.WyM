@@ -1,5 +1,5 @@
 function contarPalabras() {
-    var oracion = prompt("Por favor, ingrese una oración:");
+    var oracion = prompt("Ingrese una oración:");
 
     if (oracion !== null && oracion.trim() !== "") {
         if (!/\d/.test(oracion)) {

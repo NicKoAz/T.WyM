@@ -1,8 +1,8 @@
 function encontrarNumeroMasGrande() {
-    var numerosTexto = prompt("Por favor, ingrese una serie de números separados por comas:");
+    var numerosTexto = prompt("ingrese una serie de números separados por comas( , ):");
 
     if (/[.\-\/]/.test(numerosTexto) || /,.*,/.test(numerosTexto)) {
-        alert("Error: Los números solo deben ser separados por comas (',').");
+        alert("ERROR: Los números solo deben ser separados por comas (',').");
         encontrarNumeroMasGrande(); 
         return; 
     }
