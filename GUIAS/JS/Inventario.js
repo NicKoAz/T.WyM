@@ -1,22 +1,25 @@
-var inventario = [
-    {
-        nombre: "Producto 1",
-        precio: 10,
-        stock: 1200
-    },
-    {
-        nombre: "Producto 2",
-        precio: 15,
-        stock: 800
-    },
-    {
-        nombre: "Producto 3",
-        precio: 20,
-        stock: 1500
-    }
-];
 
 function verificarInventario() {
+    console.log("Verificando el inventario...");
+
+    var inventario = [
+        {
+            nombre: "Producto A",
+            precio: 10,
+            stock: 1200
+        },
+        {
+            nombre: "Producto B",
+            precio: 15,
+            stock: 800
+        },
+        {
+            nombre: "Producto C",
+            precio: 20,
+            stock: 1500
+        }
+    ];
+
     var stockCritico = false;
 
     for (var i = 0; i < inventario.length; i++) {
