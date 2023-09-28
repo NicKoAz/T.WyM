@@ -4,19 +4,29 @@ function verificarInventario() {
 
     var inventario = [
         {
-            nombre: "Producto A",
-            precio: 10,
+            nombre: "Producto 1",
+            precio: 100,
             stock: 1200
         },
         {
-            nombre: "Producto B",
-            precio: 15,
+            nombre: "Producto 2",
+            precio: 150,
             stock: 800
         },
         {
-            nombre: "Producto C",
-            precio: 20,
+            nombre: "Producto 3",
+            precio: 200,
             stock: 1500
+        },
+        {
+            nombre: "Producto 4",
+            precio: 190,
+            stock: 500
+        },
+        {
+            nombre: "Producto 5",
+            precio: 600,
+            stock: 2500
         }
     ];
 
