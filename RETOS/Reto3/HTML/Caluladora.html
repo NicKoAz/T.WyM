@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Propina</title>
+    <script src="../JS/Calculadora.js"></script>
+    <style>
+        .calculator-container {
+            width: 400px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            border: 2px solid #000; 
+            border-radius: 10px; 
+            background-color: #f5f5f5; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculadora de Propina</h1>
+
+        <label for="montoBoleta">Monto de la Boleta (CLP): </label>
+        <input type="text" id="montoBoleta" placeholder="Ingrese el monto de la boleta">
+        <br><br>
+
+        <label for="porcentajePropina">Porcentaje de Propina: </label>
+        <select id="porcentajePropina">
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+        </select>
+        <br><br>
+
+        <button onclick="calcularPropina()">Calcular</button>
+        <br><br>
+
+        <div id="resultado"></div>
+    </div>
+</body>
+</html>
