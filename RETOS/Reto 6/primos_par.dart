@@ -16,10 +16,7 @@ bool esPar(int numero) {
   return numero % 2 == 0;
 }
 
-void main() {
-  stdout.write('Ingrese un número: ');
-  int numero = int.parse(stdin.readLineSync()!);
-
+void verificarNumero(int numero) {
   if (esPrimo(numero)) {
     print('$numero es un número primo.');
   } else {
@@ -31,4 +28,10 @@ void main() {
   } else {
     print('$numero es un número impar.');
   }
+}
+
+void main() {
+  stdout.write('Ingrese un número: ');
+  int numero = int.parse(stdin.readLineSync()!);
+  verificarNumero(numero);
 }
