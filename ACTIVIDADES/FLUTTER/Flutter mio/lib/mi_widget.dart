@@ -1,45 +1,86 @@
 // lib/mi_widget.dart
 
-// Importar el paquete necesario para Flutter
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-// Definir una clase que representa el nuevo widget
 class MiWidget extends StatelessWidget {
-  // Método build para construir la interfaz gráfica del widget
   @override
   Widget build(BuildContext context) {
-    // Devolver un Scaffold que contiene la estructura básica de la pantalla
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mi Widget'), // Título de la pantalla
+        title: Text('Mi Widget'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Primer Card con imagen y descripción
           Card(
             child: Column(
               children: [
-                Image.network('URL_DE_LA_IMAGEN_1'), // Imagen desde URL
-                ListTile(
-                  title: Text('Descripción 1'), // Descripción asociada a la imagen
+                Image.asset(
+                  'assets/images/imagen1.jpg',
+                  fit: BoxFit.cover,
+                  height: 300.0,
+                  width: 300.0,
+                ),
+                Center(
+                  child: ListTile(
+                    title: Text('Sede Osorno'),
+                  ),
                 ),
               ],
             ),
           ),
-          // Otros Cards similares para las siguientes imágenes y descripciones
-          // ...
-
-          // Botón para redirigir a la página de Ulagos
+          Card(
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/images/imagen2.jpg',
+                  fit: BoxFit.cover,
+                  height: 300.0,
+                  width: 300.0,
+                ),
+                Center(
+                  child: ListTile(
+                    title: Text('Sede Puerto Montt'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Card(
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/images/imagen3.jpg',
+                  fit: BoxFit.cover,
+                  height: 300.0,
+                  width: 300.0,
+                ),
+                Center(
+                  child: ListTile(
+                    title: Text('Sede Chiloé'),
+                  ),
+                ),
+              ],
+            ),
+          ),
           ElevatedButton(
             onPressed: () {
-              // Acciones al hacer clic en el botón
-              // Puedes utilizar Navigator para la navegación a otras pantallas
+              _launchUlagosURL();
             },
-            child: Text('Ir a Ulagos'), // Texto del botón
+            child: Text('Ir a Ulagos'),
           ),
         ],
       ),
     );
+  }
+
+  _launchUlagosURL() async {
+    const url = 'https://www.ulagos.cl/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'No se pudo abrir la URL';
+    }
   }
 }
