@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Curso Flutter Profe/appcat/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Curso Flutter Profe/appcat/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Curso Flutter Profe/appcat/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Flutter mio/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Flutter mio/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Flutter mio/build" />
+      <excludeFolder url="file://$MODULE_DIR$/POKEDEX/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/POKEDEX/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/POKEDEX/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

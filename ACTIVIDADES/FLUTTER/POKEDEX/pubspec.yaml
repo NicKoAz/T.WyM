@@ -1,0 +1,17 @@
+name: POKEDEX
+description: ELIGE TU POKEMON
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  carousel_slider: ^4.2.1
+
+flutter:
+  assets:
+    - assets/bulbasaur.png
+    - assets/charmander.png
+    - assets/squirtle.png
