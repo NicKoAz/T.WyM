@@ -1,0 +1,20 @@
+name: memorice_league_of_legends
+description: Una aplicación Flutter
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  material_color_utilities: ^0.5.0
+  meta: ^1.10.0
+  path: ^1.8.3
+  web: ^0.4.0
+
+dev_dependencies:
+  flutter_test: any
+
+flutter:
+  uses-material-design: true
