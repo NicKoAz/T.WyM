@@ -9,6 +9,8 @@ class LoginWidget extends StatefulWidget {
 class _LoginWidgetState extends State<LoginWidget> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmNewPasswordController = TextEditingController();
   bool rememberMe = false;
 
   @override
@@ -66,11 +68,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                   },
                   child: Text("Iniciar Sesión"),
                 ),
-                SizedBox(height: 10),
                 TextButton(
                   onPressed: () {
-                    // Lógica para manejar "¿Olvidaste tu contraseña?"
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgotPasswordScreen()),
+                    );
                   },
+                  style: TextButton.styleFrom(
+                    primary: Colors.white, // Color del texto
+                  ),
                   child: Text("¿Olvidaste tu contraseña?"),
                 ),
                 SizedBox(height: 20),
@@ -78,9 +85,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     InkWell(
+                      onTap: () => _launchURL("https://www.facebook.com/"),
+                      child: Image.asset(
+                        'assets/facebook.png',  // Coloca la ruta correcta de tu imagen de Facebook
+                        width: 40,
+                        height: 40,
+                      ),
+                    ),
+                    InkWell(
                       onTap: () => _launchURL("https://translate.google.com/"),
                       child: Image.asset(
-                        'C:\Users\nicob\Desktop\Nicolas\Universidad\3 anual\6 Semestre\Tecnologias Moviles y Web\T.WyM\app_n_2\FLUTTER\home\assets\google_translate_logo.png',  // Coloca la ruta correcta de tu imagen de Google Translate
+                        'assets/translate.png',  // Coloca la ruta correcta de tu imagen de Google Translate
                         width: 40,
                         height: 40,
                       ),
@@ -138,6 +153,64 @@ class HomePage extends StatelessWidget {
         child: Text(
           "Home",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+  }
+}
+
+class ForgotPasswordScreen extends StatelessWidget {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmNewPasswordController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Recuperar Contraseña"),
+      ),
+      backgroundColor: Colors.blue, // Puedes cambiar este color según tus preferencias
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildInputField("Correo Electrónico", Icons.email, emailController),
+            SizedBox(height: 10),
+            _buildInputField("Contraseña Nueva", Icons.lock, newPasswordController),
+            SizedBox(height: 10),
+            _buildInputField("Confirmar Contraseña", Icons.lock, confirmNewPasswordController),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Lógica para procesar la recuperación de contraseña
+              },
+              child: Text("Recuperar Contraseña"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInputField(String label, IconData icon, TextEditingController controller) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.3),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: TextField(
+        controller: controller,
+        style: TextStyle(color: Colors.white),
+        obscureText: label.contains("Contraseña"),
+        decoration: InputDecoration(
+          labelText: label,
+          labelStyle: TextStyle(color: Colors.white),
+          prefixIcon: Icon(icon, color: Colors.white),
+          border: InputBorder.none,
         ),
       ),
     );
