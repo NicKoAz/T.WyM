@@ -39,9 +39,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                   ),
                 ),
                 SizedBox(height: 20),
-                _buildTransparentInputField("Email", Icons.email, emailController),
+                _buildInputField("Email", Icons.email, emailController),
                 SizedBox(height: 10),
-                _buildTransparentInputField("Contraseña", Icons.lock, passwordController),
+                _buildInputField("Contraseña", Icons.lock, passwordController, isPassword: true),
                 SizedBox(height: 10),
                 Row(
                   children: [
@@ -110,7 +110,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     );
   }
 
-  Widget _buildTransparentInputField(String label, IconData icon, TextEditingController controller) {
+  Widget _buildInputField(String label, IconData icon, TextEditingController controller, {bool isPassword = false}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -121,6 +121,7 @@ class _LoginWidgetState extends State<LoginWidget> {
       child: TextField(
         controller: controller,
         style: TextStyle(color: Colors.white),
+        obscureText: isPassword,
         decoration: InputDecoration(
           labelText: label,
           labelStyle: TextStyle(color: Colors.white),
@@ -178,9 +179,9 @@ class ForgotPasswordScreen extends StatelessWidget {
           children: [
             _buildInputField("Correo Electrónico", Icons.email, emailController),
             SizedBox(height: 10),
-            _buildInputField("Contraseña Nueva", Icons.lock, newPasswordController),
+            _buildInputField("Contraseña Nueva", Icons.lock, newPasswordController, isPassword: true),
             SizedBox(height: 10),
-            _buildInputField("Confirmar Contraseña", Icons.lock, confirmNewPasswordController),
+            _buildInputField("Confirmar Contraseña", Icons.lock, confirmNewPasswordController, isPassword: true),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
@@ -194,7 +195,7 @@ class ForgotPasswordScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInputField(String label, IconData icon, TextEditingController controller) {
+  Widget _buildInputField(String label, IconData icon, TextEditingController controller, {bool isPassword = false}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -205,7 +206,7 @@ class ForgotPasswordScreen extends StatelessWidget {
       child: TextField(
         controller: controller,
         style: TextStyle(color: Colors.white),
-        obscureText: label.contains("Contraseña"),
+        obscureText: isPassword,
         decoration: InputDecoration(
           labelText: label,
           labelStyle: TextStyle(color: Colors.white),
