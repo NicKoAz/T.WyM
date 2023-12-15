@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menú de Comida Rápida</title>
+</head>
+<body>
+    <h1>Menú de Comida Rápida</h1>
+    <h2>Catálogo:</h2>
+    
+    <div id="menu">
+        <p><b>1. Hamburguesa:</b> $3000</p>
+        <p><b>2. Pizza:</b> $4200</p>
+        <p><b>3. Hot Dog:</b> $2500</p>
+        <p><b>4. Ensalada:</b> $1600</p>
+        <p><b>5. Papas Fritas:</b> $2000</p>
+    </div>
+
+    <h2>Selecciona tu pedido:</h2>
+    <form id="orderForm">
+        <label for="menuOption">Elige un plato:</label>
+        <select id="menuOption">
+            <option value="0">Selecciona un plato</option>
+            <option value="3000">Hamburguesa</option>
+            <option value="4200">Pizza</option>
+            <option value="2500">Hot Dog</option>
+            <option value="1600">Ensalada</option>
+            <option value="2000">Papas Fritas</option>
+        </select>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1">
+        <button type="button" onclick="agregarAlPedido()">Agregar al pedido</button>
+    </form>
+
+    <h2>Tu pedido:</h2>
+    <ul id="listaPedido">
+    </ul>
+
+    <button id="calcularButton" onclick="calcularTotal()">Calcular Pedido</button>
+
+    <h2>Resumen del Pedido:</h2>
+    <p>Valor Neto: $<span id="subtotal">0</span></p>
+    <p>IVA (19%): $<span id="iva">0</span></p>
+    <p>Total a Pagar(Neto + IVA): $<span id="total">0</span></p>
+
+    <script src="comidarapida.js"></script>
+</body>
+</html>
