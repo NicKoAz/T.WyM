@@ -4,7 +4,6 @@ description: Memory Game League of Legends
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^2.0.0
 
   cupertino_icons: 1.0.6
 

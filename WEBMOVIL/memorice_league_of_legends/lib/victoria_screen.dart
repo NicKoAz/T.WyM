@@ -3,7 +3,6 @@ import 'modo_facil_screen.dart';
 import 'modo_medio_screen.dart';
 import 'modo_dificil_screen.dart';
 import 'introduction_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class VictoriaScreen extends StatelessWidget {
   final int tiempo;
@@ -44,9 +43,7 @@ class VictoriaScreen extends StatelessWidget {
                   'Tus Mejores Tiempos',
                   style: TextStyle(
                       fontSize: 30,
-                      color: Colors.black,
-                      fontFamily: Diphylleia,
-                      fontWeight: FontWeight.bold)
+                      color: Colors.black,)
                 ),
               ),
               SizedBox(height: 80),
