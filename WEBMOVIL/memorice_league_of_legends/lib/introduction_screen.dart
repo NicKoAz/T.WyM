@@ -67,7 +67,9 @@ class IntroductionScreen extends StatelessWidget {
 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => DifficultySelectionScreen(nombreUsuario)),
+                    MaterialPageRoute(
+                      builder: (context) => DifficultySelectionScreen(nombreUsuario: nombreUsuario),
+                    ),
                   );
                 },
                 style: ElevatedButton.styleFrom(primary: Colors.indigo),

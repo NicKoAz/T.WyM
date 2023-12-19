@@ -4,6 +4,7 @@ description: Memory Game League of Legends
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^2.0.0
 
   cupertino_icons: 1.0.6
 
@@ -21,5 +22,9 @@ flutter:
     - assets/CHAMPS/campeon4.png
     - assets/CHAMPS/campeon5.png
     - assets/CHAMPS/campeon6.png
+    - assets/CHAMPS/campeon7.png
+    - assets/CHAMPS/campeon8.png
+    - assets/CHAMPS/campeon9.png
+    - assets/CHAMPS/campeon10.png
     - assets/placeholder.jpg
     - assets/VICTORIA.jpg

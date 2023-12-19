@@ -38,7 +38,8 @@ class _ModoFacilScreenState extends State<ModoFacilScreen> {
 
     // Duplica las cartas para formar pares
     List<String> cartasDuplicadas = List.from(listaCartas);
-    listaCartas.addAll(cartasDuplicadas);
+    listaCartas.clear(); // Limpia la lista antes de agregar nuevas cartas
+    listaCartas.addAll([...cartasDuplicadas, ...cartasDuplicadas]); // Duplica y agrega las cartas nuevamente
     // Baraja las cartas
     listaCartas.shuffle();
     // Inicializa la visibilidad de las cartas
@@ -105,7 +106,7 @@ class _ModoFacilScreenState extends State<ModoFacilScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => VictoriaScreen(tiempo: cronometro.elapsedMilliseconds),
+          builder: (context) => VictoriaScreen(tiempo: cronometro.elapsedMilliseconds, nombreUsuario: widget.nombreUsuario, modoJuego: 'Fácil'),
         ),
       );
     }
@@ -122,35 +123,52 @@ class _ModoFacilScreenState extends State<ModoFacilScreen> {
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(height: 40),
+            Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.5),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                'Fácil',
+                style: TextStyle(fontSize: 24, color: Colors.white),
+              ),
+            ),
+            SizedBox(height: 30),
             Expanded(
-              child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                ),
-                itemCount: listaCartas.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      if (juegoIniciado) {
-                        voltearCarta(index);
-                      }
-                    },
-                    child: Container(
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: cartasVisibles[index] ? Colors.white : Colors.transparent,
-                        borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(
-                          image: cartasVisibles[index]
-                              ? AssetImage('assets/placeholder.jpg') // Imagen de respaldo para las cartas
-                              : AssetImage(listaCartas[index]),
-                          fit: BoxFit.cover,
+              child: Center(
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                  ),
+                  itemCount: listaCartas.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        if (juegoIniciado && cartasVisibles[index]) {
+                          voltearCarta(index);
+                        }
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: cartasVisibles[index] ? Colors.white : Colors.transparent,
+                          borderRadius: BorderRadius.circular(8),
+                          image: DecorationImage(
+                            image: cartasVisibles[index]
+                                ? AssetImage('assets/placeholder.jpg') // Imagen de respaldo para las cartas
+                                : AssetImage(listaCartas[index]),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
             ),
             SizedBox(height: 20),
