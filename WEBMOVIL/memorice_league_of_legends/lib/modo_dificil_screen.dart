@@ -34,6 +34,7 @@ class _ModoDificilScreenState extends State<ModoDificilScreen> {
   @override
   void initState() {
     super.initState();
+    iniciarJuego();
   }
 
   void iniciarJuego() {
@@ -187,22 +188,7 @@ class _ModoDificilScreenState extends State<ModoDificilScreen> {
               ),
             )
                 : SizedBox(),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                if (!juegoIniciado) {
-                  iniciarJuego();
-                } else {
-                  // Si el juego ya ha comenzado, muestra un mensaje
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('El juego ya ha comenzado.'),
-                    ),
-                  );
-                }
-              },
-              child: Text('Iniciar Juego'),
-            ),
+            SizedBox(height: 40),
           ],
         ),
       ),

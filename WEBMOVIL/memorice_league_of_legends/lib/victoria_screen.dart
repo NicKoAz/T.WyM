@@ -38,7 +38,7 @@ class VictoriaScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 10),
+                margin: EdgeInsets.only(top: 0),
                 child: Text(
                   'Tus Mejores Tiempos',
                   style: TextStyle(
@@ -46,7 +46,7 @@ class VictoriaScreen extends StatelessWidget {
                       color: Colors.black,)
                 ),
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 100),
               Container(
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(

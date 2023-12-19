@@ -32,6 +32,7 @@ class _ModoMedioScreenState extends State<ModoMedioScreen> {
   @override
   void initState() {
     super.initState();
+    iniciarJuego();
   }
 
   void iniciarJuego() {
@@ -128,7 +129,7 @@ class _ModoMedioScreenState extends State<ModoMedioScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 40),
+            SizedBox(height: 60),
             Container(
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -140,7 +141,7 @@ class _ModoMedioScreenState extends State<ModoMedioScreen> {
                 style: TextStyle(fontSize: 24, color: Colors.white),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 70),
             Expanded(
               child: Center(
                 child: GridView.builder(
@@ -173,7 +174,7 @@ class _ModoMedioScreenState extends State<ModoMedioScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             juegoIniciado
                 ? Container(
               padding: EdgeInsets.all(10),
@@ -187,22 +188,7 @@ class _ModoMedioScreenState extends State<ModoMedioScreen> {
               ),
             )
                 : SizedBox(),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                if (!juegoIniciado) {
-                  iniciarJuego();
-                } else {
-                  // Si el juego ya ha comenzado, muestra un mensaje
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('El juego ya ha comenzado.'),
-                    ),
-                  );
-                }
-              },
-              child: Text('Iniciar Juego'),
-            ),
+            SizedBox(height: 40),
           ],
         ),
       ),

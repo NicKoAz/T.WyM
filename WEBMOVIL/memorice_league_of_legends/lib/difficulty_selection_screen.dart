@@ -24,27 +24,29 @@ class DifficultySelectionScreen extends StatelessWidget {
           Column(
             children: [
               Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: EdgeInsets.only(top: 100),
+                padding: EdgeInsets.all(8.0),
+                color: Colors.grey.withOpacity(0.5),
                 child: Text(
                   'Bienvenido $nombreUsuario',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
+                Container(
+                  padding: EdgeInsets.all(8.0),
+                  color: Colors.grey.withOpacity(0.5),
+                  child: Text(
+                    'Seleccione dificultad',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
               Center(
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        padding: EdgeInsets.all(8.0),
-                        color: Colors.grey.withOpacity(0.5),
-                        child: Text(
-                          'Seleccione dificultad',
-                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      SizedBox(height: 50),
+                      SizedBox(height: 80),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.push(

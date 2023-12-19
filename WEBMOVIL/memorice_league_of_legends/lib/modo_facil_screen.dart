@@ -30,6 +30,7 @@ class _ModoFacilScreenState extends State<ModoFacilScreen> {
   @override
   void initState() {
     super.initState();
+    iniciarJuego(); // Llama a iniciarJuego directamente al iniciar el estado
   }
 
   void iniciarJuego() {
@@ -185,22 +186,7 @@ class _ModoFacilScreenState extends State<ModoFacilScreen> {
               ),
             )
                 : SizedBox(),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                if (!juegoIniciado) {
-                  iniciarJuego();
-                } else {
-                  // Si el juego ya ha comenzado, muestra un mensaje
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('El juego ya ha comenzado.'),
-                    ),
-                  );
-                }
-              },
-              child: Text('Iniciar Juego'),
-            ),
+            SizedBox(height: 40),
           ],
         ),
       ),
