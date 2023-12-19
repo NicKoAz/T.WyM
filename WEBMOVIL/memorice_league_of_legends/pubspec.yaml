@@ -1,0 +1,25 @@
+name: memory_game
+description: Memory Game League of Legends
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: 1.0.6
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+flutter:
+  assets:
+    - assets/INICIO.JPG
+    - assets/SELECCIONDEMODOS.jpg
+    - assets/MODOSDEJUEGOS.jpg
+    - assets/CHAMPS/campeon1.png
+    - assets/CHAMPS/campeon2.png
+    - assets/CHAMPS/campeon3.png
+    - assets/CHAMPS/campeon4.png
+    - assets/CHAMPS/campeon5.png
+    - assets/CHAMPS/campeon6.png
+    - assets/placeholder.jpg
+    - assets/VICTORIA.jpg
